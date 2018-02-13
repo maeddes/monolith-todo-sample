@@ -1,7 +1,7 @@
-/Users/matthiashaeussler/git/spring-simple-java-samples/spring-todolist-simple-cqrs/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/AMQPConfig.java
-/Users/matthiashaeussler/git/spring-simple-java-samples/spring-todolist-simple-cqrs/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/ToDoItemRepository.java
-/Users/matthiashaeussler/git/spring-simple-java-samples/spring-todolist-simple-cqrs/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/ToDoListQueryController.java
-/Users/matthiashaeussler/git/spring-simple-java-samples/spring-todolist-simple-cqrs/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/ToDoListCommandReceiver.java
-/Users/matthiashaeussler/git/spring-simple-java-samples/spring-todolist-simple-cqrs/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/ToDoItem.java
-/Users/matthiashaeussler/git/spring-simple-java-samples/spring-todolist-simple-cqrs/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/SpringTodoListSimpleCqrsApplication.java
-/Users/matthiashaeussler/git/spring-simple-java-samples/spring-todolist-simple-cqrs/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/ToDoListCommandController.java
+/Users/matthiashaeussler/git/monolith-todo-sample/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/SpringTodoListSimpleCqrsApplication.java
+/Users/matthiashaeussler/git/monolith-todo-sample/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/ToDoListQueryController.java
+/Users/matthiashaeussler/git/monolith-todo-sample/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/ToDoListCommandReceiver.java
+/Users/matthiashaeussler/git/monolith-todo-sample/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/ToDoListCommandController.java
+/Users/matthiashaeussler/git/monolith-todo-sample/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/ToDoItemRepository.java
+/Users/matthiashaeussler/git/monolith-todo-sample/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/ToDoItem.java
+/Users/matthiashaeussler/git/monolith-todo-sample/src/main/java/de/maeddes/SpringTodoListSimpleCQRS/AMQPConfig.java

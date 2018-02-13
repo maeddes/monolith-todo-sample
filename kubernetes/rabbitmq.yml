@@ -1,0 +1,29 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  namespace: todo-app
+  name: todo-messaging
+  labels:
+    app: todo-messaging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-messaging
+  template:
+    metadata:
+      labels:
+        app: todo-messaging
+    spec:
+      containers:
+      - name: rabbitmq
+        image: rabbitmq:3
+        ports:
+        - containerPort: 5672
+        env:
+        - name: RABBITMQ_DEFAULT_USER
+          value: matthias
+        - name: RABBITMQ_DEFAULT_PASS
+          value: matthias
+        - name: RABBITMQ_DEFAULT_HOST
+          value: vhost

@@ -1,7 +1,0 @@
-de/maeddes/SpringTodoListSimpleCQRS/SpringTodoListSimpleCqrsApplication.class
-de/maeddes/SpringTodoListSimpleCQRS/ToDoItemRepository.class
-de/maeddes/SpringTodoListSimpleCQRS/ToDoListCommandReceiver.class
-de/maeddes/SpringTodoListSimpleCQRS/ToDoItem.class
-de/maeddes/SpringTodoListSimpleCQRS/AMQPConfig.class
-de/maeddes/SpringTodoListSimpleCQRS/ToDoListCommandController.class
-de/maeddes/SpringTodoListSimpleCQRS/ToDoListQueryController.class

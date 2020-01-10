@@ -1,7 +1,6 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  namespace: todo-app
   name: todo-db
   labels:
     app: todo-db

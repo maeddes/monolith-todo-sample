@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: monolith
+  labels:
+    app: todo-app
+spec:
+  type: NodePort
+  ports:
+  - port: 9082
+    name: todo-app
+    targetPort: 9082
+  selector:
+    app: todo-app
+  type: NodePort
+---  
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: todo-app
+  labels:
+    app: todo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-app
+  template:
+    metadata:
+      labels:
+        app: todo-app
+    spec:
+      containers:
+      - name: todo-app
+        imagePullPolicy: IfNotPresent
+        image: maeddes/todo-app:v1
+        ports:
+        - containerPort: 9082

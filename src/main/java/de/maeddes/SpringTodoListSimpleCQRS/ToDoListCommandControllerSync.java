@@ -1,7 +1,5 @@
 package de.maeddes.SpringTodoListSimpleCQRS;
 
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
@@ -10,31 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@Profile("rabbit")
+@Profile("nomq")
 @RequestMapping("/")
-public class ToDoListCommandController {
+public class ToDoListCommandControllerSync {
 
     @Autowired
-    private RabbitTemplate rabbitTemplate;
-
-    @Autowired
-    private Queue queue;
-
-    public void send(String message) {
-        this.rabbitTemplate.convertAndSend(queue.getName(), message);
-        System.out.println(" [x] Sent '" + message + "'");
-    }
+    ToDoItemRepository toDoItemRepository;
 
     @RequestMapping(method = RequestMethod.POST)
     public String addItem(ToDoItem toDoItem){
 
         System.out.println("In addItem: "+toDoItem);
-        this.send(toDoItem.getDescription());
 
         try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            this.toDoItemRepository.save(toDoItem);
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
         }
 
         return "redirect:/";
@@ -45,12 +34,11 @@ public class ToDoListCommandController {
     public String setItemDone(@PathVariable int id){
 
         System.out.println("In setItemDone: "+id);
-        this.send("done:"+id);
-
+  
         try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            this.toDoItemRepository.delete(id);
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
         }
 
         return "redirect:/";

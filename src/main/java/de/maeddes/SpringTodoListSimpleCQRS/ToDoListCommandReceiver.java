@@ -3,7 +3,9 @@ package de.maeddes.SpringTodoListSimpleCQRS;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 
+@Profile("rabbit")
 @RabbitListener(queues = "my-queue")
 public class ToDoListCommandReceiver {
 

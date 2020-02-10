@@ -32,7 +32,7 @@ public class ToDoListQueryController {
         }
         System.out.println("In getItems: "+items);
 
-        model.addAttribute("name","matthias");
+        model.addAttribute("name","Master Organizer");
         return "items";
 
     }

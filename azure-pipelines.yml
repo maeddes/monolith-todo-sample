@@ -32,23 +32,7 @@ stages:
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
     - task: Docker@2
-      displayName: Build an image
-      inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        tags: |
-          $(tag)
-    - task: Docker@2
       inputs:
         containerRegistry: 'Docker Hub'
-        repository: 'maeddes'
-        command: 'push'
-    - task: Docker@2
-      displayName: Push image
-      inputs:
-        containerRegistry: 'Docker Hub'
-        repository: '$(imageName)'
-        command: 'push'
-        tags: |
-          test1
-          test2
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'

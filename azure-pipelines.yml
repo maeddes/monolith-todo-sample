@@ -33,7 +33,12 @@ stages:
         sonarQubeRunAnalysis: false
     - task: Docker@2
       inputs:
-        containerRegistry: 'Docker Hub'
+        containerRegistry: 'DockerHub Matthias'
         repository: 'maeddes/monolith-todo'
-        command: 'buildAndPush'
+        command: 'build'
         Dockerfile: '**/Dockerfile'
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'DockerHub Matthias'
+        repository: 'maeddes/monolith-todo'
+        command: 'push'

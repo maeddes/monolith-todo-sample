@@ -45,11 +45,6 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'matthias-azure-registry'
-        repository: 'maeddes/monolith-todo'
-        command: 'push'
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'matthias-azure-registry'
         repository: 'sample-app'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'

@@ -32,9 +32,25 @@ stages:
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
     - task: Docker@2
-      displayName: Build an image
       inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+        containerRegistry: 'DockerHub Matthias'
+        repository: 'maeddes/monolith-todo'
+        command: 'build'
+        Dockerfile: '**/Dockerfile'
         tags: |
-          $(tag)
+          $(Build.BuildId)
+          latest
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'DockerHub Matthias'
+        repository: 'maeddes/monolith-todo'
+        command: 'push'
+        tags: |
+          $(Build.BuildId)
+          latest
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'matthias-azure-registry'
+        repository: 'sample-app'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'

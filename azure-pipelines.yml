@@ -45,6 +45,9 @@ stages:
         containerRegistry: 'DockerHub Matthias'
         repository: 'maeddes/monolith-todo'
         command: 'push'
+        tags: |
+          $(Build.BuildId)
+          latest
     - task: Docker@2
       inputs:
         containerRegistry: 'matthias-azure-registry'

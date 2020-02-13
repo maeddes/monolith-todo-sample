@@ -37,6 +37,9 @@ stages:
         repository: 'maeddes/monolith-todo'
         command: 'build'
         Dockerfile: '**/Dockerfile'
+        tags: |
+          $(Build.BuildId)
+          latest
     - task: Docker@2
       inputs:
         containerRegistry: 'DockerHub Matthias'

@@ -33,7 +33,7 @@ stages:
         sonarQubeRunAnalysis: false
     - task: Docker@2
       inputs:
-        containerRegistry: 'DockerHub Matthias'
+        containerRegistry: 'KundenplattformACR'
         repository: 'maeddes/monolith-todo'
         command: 'build'
         Dockerfile: '**/Dockerfile'

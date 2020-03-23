@@ -42,7 +42,7 @@ stages:
           latest
     - task: Docker@2
       inputs:
-        containerRegistry: 'DockerHub Matthias'
+        containerRegistry: 'KundenplattformACR'
         repository: 'maeddes/monolith-todo'
         command: 'push'
         tags: |

@@ -36,7 +36,7 @@ stages:
       displayName: ACR build
       inputs:
         containerRegistry: 'KundenplattformACR'
-        repository: 'maeddes/monolith-todo'
+        #repository: 'maeddes/monolith-todo'
         command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: |
@@ -46,7 +46,7 @@ stages:
       displayName: ACR push
       inputs:
         containerRegistry: 'KundenplattformACR'
-        repository: 'maeddes/monolith-todo'
+        #repository: 'maeddes/monolith-todo'
         command: 'push'
         tags: |
           $(Build.BuildId)

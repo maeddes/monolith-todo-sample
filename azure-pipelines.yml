@@ -46,7 +46,7 @@ stages:
       displayName: ACR push
       inputs:
         containerRegistry: 'KundenplattformACR'
-        repository: 'matthias/sample-app'
+        repository: 'sample-app'
         command: 'push'
         tags: |
           $(Build.BuildId)

@@ -46,7 +46,7 @@ stages:
       displayName: ACR push
       inputs:
         containerRegistry: 'KundenplattformACR'
-        #repository: 'maeddes/monolith-todo'
+        repository: 'matthias/sample-app'
         command: 'push'
         tags: |
           $(Build.BuildId)

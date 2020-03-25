@@ -97,7 +97,7 @@ stages:
 
           - template: kubernetes_deploy.yaml@PipelineTemplates
             parameters:
-              kubernetesServiceConnection: test-k8s
+              kubernetesServiceConnection: test-k8s-default
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml

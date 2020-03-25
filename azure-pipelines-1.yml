@@ -6,7 +6,11 @@ trigger:
 - master
 
 resources:
-- repo: self
+  repositories:
+    - repository: PipelineTemplates
+      type: git
+      name: pipeline-templates/pipeline-templates
+    - repository: self
 
 variables:
 
@@ -91,3 +95,11 @@ stages:
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
 
+          - template: kubernetes_deploy.yaml@PipelineTemplates
+            parameters:
+              #kubernetesServiceConnection: $(aks-service-connection)
+              manifests: |
+                $(Pipeline.Workspace)/manifests/deployment.yml
+                $(Pipeline.Workspace)/manifests/service.yml
+
+          

@@ -97,7 +97,7 @@ stages:
 
           - template: kubernetes_deploy.yaml@PipelineTemplates
             parameters:
-              #kubernetesServiceConnection: $(aks-service-connection)
+              kubernetesServiceConnection: test-k8s
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml

@@ -36,7 +36,7 @@ public class ToDoListCommandControllerSync {
         System.out.println("In setItemDone: "+id);
   
         try {
-            this.toDoItemRepository.delete(id);
+            this.toDoItemRepository.deleteById(id);
         } catch (Exception e) {
             System.out.println("Exception: " + e);
         }

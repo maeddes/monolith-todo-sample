@@ -1,0 +1,4 @@
+---
+applications:
+- name: todomonolith
+  path: target/Spring-TodoList-Simple-CQRS-0.0.1-SNAPSHOT.jar

@@ -22,7 +22,7 @@ public class ToDoListCommandReceiver {
             if (id != null) {
 
                 try {
-                    this.toDoItemRepository.delete(new Integer(id));
+                    this.toDoItemRepository.deleteById(new Integer(in).intValue());
                 } catch (Exception e) {
                     System.out.println("Exception: " + e);
                 }

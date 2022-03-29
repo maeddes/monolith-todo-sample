@@ -1,16 +1,24 @@
-apiVersion : apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sampleapp 
+  creationTimestamp: null
+  labels:
+    app: sampleapp
+  name: sampleapp
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: sampleapp
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
-        app: sampleapp 
+        app: sampleapp
     spec:
       containers:
-        - name: sampleapp 
-          image: kundenplattformacr.azurecr.io/sampleapp
-          ports:
-          - containerPort: 8080
+      - image: maeddes/demo
+        name: demo
+        resources: {}
+status: {}
